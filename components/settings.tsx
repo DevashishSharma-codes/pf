@@ -39,6 +39,18 @@ const COLORS: {
   activeRing: string;
 }[] = [
   {
+    id: "black",
+    label: "Espresso",
+    swatch: "bg-[#151413] border border-stone-600 shadow-xs",
+    bg: "#151413",
+    primary: "#fbf8f3",
+    foreground: "#ece6db",
+    gradientFrom: "from-stone-700",
+    gradientTo: "to-stone-950",
+    ringOffset: "ring-offset-stone-800",
+    activeRing: "ring-stone-400",
+  },
+  {
     id: "regular",
     label: "White",
     swatch: "bg-white border border-neutral-300 shadow-xs",
@@ -49,18 +61,6 @@ const COLORS: {
     gradientTo: "to-neutral-900",
     ringOffset: "ring-offset-neutral-800",
     activeRing: "ring-neutral-400",
-  },
-  {
-    id: "black",
-    label: "Espresso",
-    swatch: "bg-[#151413] border border-stone-600 shadow-xs",
-    bg: "#151413",
-    primary: "#fcfaf6",
-    foreground: "#ede8e1",
-    gradientFrom: "from-stone-700",
-    gradientTo: "to-stone-950",
-    ringOffset: "ring-offset-stone-800",
-    activeRing: "ring-stone-400",
   },
   {
     id: "rose",
@@ -124,7 +124,7 @@ const COLORS: {
   },
 ];
 
-const STORAGE_KEY = "site-settings-v2";
+const STORAGE_KEY = "site-settings-v3";
 
 function isColorOption(value: unknown): value is ColorOption {
   return typeof value === "string" && COLORS.some((c) => c.id === value);
@@ -132,7 +132,7 @@ function isColorOption(value: unknown): value is ColorOption {
 
 function loadSettings(): { font: FontOption; color: ColorOption } {
   if (typeof window === "undefined")
-    return { font: "schibsted", color: "regular" };
+    return { font: "schibsted", color: "black" };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
@@ -140,7 +140,7 @@ function loadSettings(): { font: FontOption; color: ColorOption } {
         font?: FontOption;
         color?: unknown;
       };
-      const color = isColorOption(parsed.color) ? parsed.color : "regular";
+      const color = isColorOption(parsed.color) ? parsed.color : "black";
       const font =
         parsed.font && FONTS.some((f) => f.id === parsed.font)
           ? parsed.font
@@ -148,7 +148,7 @@ function loadSettings(): { font: FontOption; color: ColorOption } {
       return { font, color };
     }
   } catch {}
-  return { font: "schibsted", color: "regular" };
+  return { font: "schibsted", color: "black" };
 }
 
 function saveSettings(font: FontOption, color: ColorOption) {
@@ -169,7 +169,7 @@ function applySettings(font: FontOption, color: ColorOption) {
 export const Settings = () => {
   const [open, setOpen] = useState(false);
   const [font, setFont] = useState<FontOption>("schibsted");
-  const [color, setColor] = useState<ColorOption>("regular");
+  const [color, setColor] = useState<ColorOption>("black");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
