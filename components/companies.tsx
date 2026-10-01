@@ -14,72 +14,63 @@ import { Box } from "./box";
 export const Companies = () => {
   const companies = [
     {
-      title: "Cursor",
-      description: "AI first code editor and development environment.",
+      title: "21Spheres",
+      description: "Full Stack Intern engineering TheRepertory AI clinical platform.",
       skeleton: (
         <CursorIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-neutral-400 to-neutral-600 ring-offset-neutral-500",
+        "bg-linear-to-b from-blue-400 to-indigo-600 ring-offset-blue-500",
     },
     {
-      title: "Replit",
-      description: "AI-powered platform to build and ship software.",
+      title: "Wealth's Wisdom",
+      description: "Freelance full-stack financial goals & asset tracking platform.",
       skeleton: (
         <ReplitIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+        "bg-linear-to-b from-orange-400 to-amber-600 ring-offset-orange-500",
     },
     {
-      title: "Neon",
-      description: "Fast Postgres Databases for Teams and Agents.",
-      skeleton: (
-        <NeonIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-green-400 to-green-600 ring-offset-green-500",
-    },
-    {
-      title: "Strapi",
-      description: "Open-Source headless CMS for apps.",
-      skeleton: (
-        <StrapiIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-violet-400 to-violet-600 ring-offset-violet-500",
-    },
-    {
-      title: "Hostinger",
-      description: "Web hosting and domains platform.",
+      title: "Oracle & PIET",
+      description: "Oracle Java SE 17 Certified Developer & B.Tech CSE (IEP).",
       skeleton: (
         <HostingerIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-purple-400 to-purple-600 ring-offset-purple-500",
+        "bg-linear-to-b from-red-500 to-rose-700 ring-offset-red-500",
     },
     {
-      title: "Posthog",
-      description: "Open-Source product analytics platform.",
+      title: "AWS Cloud",
+      description: "Containerized deployment with AWS ECS, ECR, and CI/CD pipelines.",
+      skeleton: (
+        <StrapiIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-amber-400 to-yellow-600 ring-offset-amber-500",
+    },
+    {
+      title: "Neon & PostgreSQL",
+      description: "High-performance relational databases, Prisma ORM, and caching.",
+      skeleton: (
+        <NeonIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-green-400 to-emerald-600 ring-offset-green-500",
+    },
+    {
+      title: "Supabase & Clerk",
+      description: "Real-time subscriptions, secure auth & session management.",
       skeleton: (
         <PosthogIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-yellow-400 to-yellow-600 ring-offset-yellow-500",
-    },
-    {
-      title: "Fireworks",
-      description: "Open-source AI models at blazing speed.",
-      skeleton: (
-        <FireworksIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-indigo-400 to-indigo-600 ring-offset-indigo-500",
+        "bg-linear-to-b from-teal-400 to-cyan-600 ring-offset-teal-500",
     },
   ];
   return (
     <section>
-      <Subheading>Companies I've worked with</Subheading>
+      <Subheading>Organizations & Tech Stack</Subheading>
       <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
         {companies.map((company) => (
           <div key={company.title} className="flex flex-col gap-3">

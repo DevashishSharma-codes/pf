@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Container from "@/components/container";
 import { Header } from "@/components/header";
 import { Work } from "@/components/work";
-import { DottedSeparator } from "@/components/separator";
-import { Companies } from "@/components/companies";
+import { Projects } from "@/components/projects";
+import { ThreeDotsSeparator } from "@/components/separator";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import { BlogList } from "@/components/blog/blog-list";
 import { WorkWithMe } from "@/components/work-with-me";
@@ -15,8 +15,9 @@ type HomeBlogPost = {
 };
 
 export const metadata: Metadata = {
-  title: "Manu Arora",
-  description: "Founder, Creator, YouTuber, Shitposter, and a Learner.",
+  title: "Devashish Sharma - Full Stack Developer & Builder",
+  description:
+    "Full Stack Developer, Real-time Systems & AI Engineer, and Builder. Experienced at EnactOn Technologies and 21Spheres.",
   alternates: {
     canonical: "/",
   },
@@ -28,17 +29,17 @@ export default async function Home() {
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
   return (
-    <Container>
+    <Container className="pt-2 pb-16">
       <Header />
-      <DottedSeparator className="my-10" />
+      <ThreeDotsSeparator />
       <Work />
-      <DottedSeparator className="my-10" />
-      <Companies />
-      <DottedSeparator className="my-10" />
-      <WorkWithMe />
-      <DottedSeparator className="my-10" />
+      <ThreeDotsSeparator />
+      <Projects />
+      <ThreeDotsSeparator />
       <BlogList posts={posts} />
-      <DottedSeparator className="my-10" />
+      <ThreeDotsSeparator />
+      <WorkWithMe />
+      <ThreeDotsSeparator />
     </Container>
   );
 }

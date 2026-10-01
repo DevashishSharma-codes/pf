@@ -1,0 +1,45 @@
+---
+title: "Building Purplex: An AI Conversational Search Engine with RAG & LangGraph"
+publishedAt: "2026-08-15"
+summary: "How I architected and shipped a 0→1 search-driven conversational engine with cited-answer UX, deduplication layers, and multi-source RAG across PDFs, YouTube, and the live web."
+image: "/avatar.jpg"
+---
+
+When users ask questions to modern LLMs, one of the biggest bottlenecks isn't model parameter count—it's **verifiability and trust**.
+
+Hallucinations and ungrounded statements can be subtle. While designing [Purplex](https://purplex-topaz.vercel.app/), my core product goal was to invert the traditional chat interface into a **cited-answer first experience**, where every sentence can be verified against live retrieved sources.
+
+---
+
+### Key Technical Architecture
+
+Purplex is built with **React 19**, **Redux Toolkit**, **Express**, **LangChain / LangGraph**, **Mistral**, **Tavily Search API**, **MongoDB**, and **Socket.IO**.
+
+Here are the key design choices made along the way:
+
+1. **Cited-Answer UX over Plain Chat:**
+   Instead of outputting text in a single block, the system streams tokens in real-time while indexing cited source chips (`[1]`, `[2]`, `[3]`). Users can hover over and inspect snippets directly from the original source.
+
+2. **Deduplication Layer for LLM Calls:**
+   To reduce latency and cloud API costs, we implemented a semantic hashing & query normalization layer that detects redundant searches before triggering expensive retrieval cycles.
+
+3. **Multi-Surface RAG Ingestion:**
+   Users frequently need answers across mixed media formats. We built 3 distinct ingestion pipelines:
+   - **Web Search**: Real-time web crawling and Tavily API grounding.
+   - **PDF Parsing**: Chunking, vector embedding, and similarity search for research documents.
+   - **YouTube Transcripts**: Ingesting timestamped subtitles to answer questions about technical video lectures.
+
+---
+
+### Real-Time Streaming Flow
+
+```
+User Query ──► Query Normalizer ──► Tavily / Vector DB Ingestion
+                                           │
+                                           ▼
+Markdown Stream ◄── Socket.IO ◄── LangGraph / Mistral RAG Agent
+```
+
+By prioritizing ground truth citations and latency optimization, Purplex turns open-web conversational AI into a reliable research assistant.
+
+Check out the [live demo](https://purplex-topaz.vercel.app/) and [GitHub repository](https://github.com/DevashishSharma-codes/PURPLEX).

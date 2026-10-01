@@ -7,9 +7,9 @@ import { DottedSeparator } from "@/components/separator";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Inspiration - Manu Arora",
+  title: "Inspiration - Devashish Sharma",
   description:
-    "People, products, and websites that inspire my design engineering taste.",
+    "People, engineering tools, open-source libraries, and architectures that inspire my work.",
   alternates: {
     canonical: "/inspiration",
   },

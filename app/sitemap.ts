@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 
-const SITE_URL = "https://manuarora.in";
+const SITE_URL = "https://mac-portfolio-2kzn.vercel.app";
 
 type BlogFrontMatter = {
   slug: string;

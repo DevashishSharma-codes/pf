@@ -1,0 +1,60 @@
+---
+title: "Real-Time WebSockets at Scale: Fixing Stale Closures & Duplicate Queues"
+publishedAt: "2026-05-02"
+summary: "A deep dive into debugging subtle WebSocket/Socket.IO connection lifecycles, race conditions, memory leaks, and stale React closures in live clinician queues."
+image: "/avatar.jpg"
+---
+
+When building real-time applications with React and WebSockets, one of the most common and insidious bugs stems from **stale closures and unintended duplicate connection instances**.
+
+In a production queue system, a single ghost connection can cause duplicate event dispatches, broken room subscriptions, or silent memory leaks.
+
+---
+
+### Why Stale Closures Happen in Socket Handlers
+
+Consider this common anti-pattern in React:
+
+```typescript
+useEffect(() => {
+  const socket = io(ENDPOINT);
+
+  socket.on("patient_update", (patient) => {
+    // BUG: queueState will always be its initial value when this callback was created!
+    setQueue([...queueState, patient]);
+  });
+
+  return () => {
+    socket.disconnect();
+  };
+}, []); // Missing dependencies or incorrect closure capture
+```
+
+Because the listener callback captures the initial scope of `queueState`, incoming events overwrite intermediate state instead of appending cleanly.
+
+---
+
+### The Functional State & Event-Bus Solution
+
+To ensure rock-solid real-time handlers:
+
+1. **Always Use Functional State Setters:**
+   ```typescript
+   socket.on("patient_update", (patient) => {
+     setQueue((prevQueue) => {
+       // Deduplicate by ID and append
+       if (prevQueue.some((p) => p.id === patient.id)) return prevQueue;
+       return [...prevQueue, patient];
+     });
+   });
+   ```
+
+2. **Idempotent Connection Singletons:**
+   Guard against React 18/19 StrictMode double-invocations by attaching socket instances to managed singleton refs or robust connection managers that track lifecycle states (`CONNECTING`, `OPEN`, `CLOSING`, `CLOSED`).
+
+3. **Exponential Backoff with Heartbeat Pings:**
+   Add explicit heartbeat pings with configurable jitter to detect stale half-open TCP sockets across network hops.
+
+---
+
+Applying these patterns transformed our patient queues and live collaborative canvas into zero-drift, reliable real-time pipelines.

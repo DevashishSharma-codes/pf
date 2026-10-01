@@ -1,11 +1,11 @@
 {
-  "name": "manuarora.in",
-  "description": "My personal blog and website",
+  "name": "devashish-portfolio",
+  "description": "Devashish Sharma - Full Stack Developer & Technical Builder",
   "version": "1.0.0",
   "author": {
-    "name": "Manu Arora",
-    "email": "contact@manuarora.in",
-    "url": "https://manuarora.in"
+    "name": "Devashish Sharma",
+    "email": "devashishsharma2157@gmail.com",
+    "url": "https://mac-portfolio-2kzn.vercel.app/"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manuarora700/personal-portfolio.git"
+    "url": "git+https://github.com/DevashishSharma-codes/pw.git"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.15",

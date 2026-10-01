@@ -6,9 +6,9 @@ import { BlogIndex, type BlogIndexPost } from "@/components/blog/blog-index";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 
 export const metadata: Metadata = {
-  title: "Blog - Manu Arora",
+  title: "Blog - Devashish Sharma",
   description:
-    "Notes on software, design engineering, freelancing, and things I learn while building.",
+    "Engineering notes, system design teardowns, real-time architectures, AI workflows, and project breakdowns.",
   alternates: {
     canonical: "/blog",
   },
@@ -20,10 +20,10 @@ export default async function BlogPage() {
   return (
     <section>
       <Container className="min-h-screen">
-        <Subheading className="mt-4">My thoughts on things</Subheading>
+        <Subheading className="mt-4">Engineering Notes & Insights</Subheading>
         <p className="text-foreground pt-4 text-base">
-          I occasionally write here and talk about things that I want to share on
-          my personal space.
+          Articles, system design deep-dives, RAG experiments, and lessons
+          learned shipping production web applications.
         </p>
 
         <BlogIndex posts={posts} />

@@ -1,0 +1,41 @@
+---
+title: "Architecting Picasso: A Sub-50ms Collaborative Canvas in Next.js 16"
+publishedAt: "2026-07-20"
+summary: "Building an Excalidraw-style collaborative whiteboard from scratch using HTML5 Canvas, Rough.js, WebSockets, Prisma, and Turborepo."
+image: "/avatar.jpg"
+---
+
+Collaborative whiteboard tools like Excalidraw and Figma look deceptively simple on the surface. But under the hood, building a low-latency multi-user canvas requires managing geometry math, ray-casting hit detection, delta synchronization, and conflict resolution across distributed clients.
+
+With [Picasso](https://cali-web-one.vercel.app/), I set out to architect a full-stack, real-time diagramming canvas inside a **Turborepo monorepo** with **sub-50ms broadcast latency**.
+
+---
+
+### Core Tech Stack
+
+- **Frontend:** Next.js 16, React 19, TypeScript, Rough.js, HTML5 Canvas API
+- **State & Auth:** Clerk Authentication, Zustand, WebSocket client
+- **Backend & Database:** Node.js WebSockets server, PostgreSQL, Prisma ORM, Supabase storage
+- **Monorepo:** Turborepo + pnpm workspace structure
+
+---
+
+### Geometry & Hit-Testing Engine
+
+Instead of relying on heavy DOM elements for thousands of shapes, Picasso renders everything to an optimized HTML5 Canvas using vector projection:
+
+- **Ray-Casting Polygon Detection:** Point-in-polygon algorithms to detect clicks on complex multi-point freehand paths and rotated polygons.
+- **8-Point Bounding Box Resizing:** Accurate affine transformation matrices for uniform and non-uniform scaling with live rotation snapping.
+- **Rough.js Hand-Drawn Aesthetics:** Custom stroke generation that retains the warm, human feel of rough sketches without sacrificing 60fps render loops.
+
+---
+
+### Real-Time Synchronization Architecture
+
+To achieve sub-50ms latency:
+
+1. **Optimistic Local Updates:** Cursor and shape movements render locally at display refresh rates (60–120Hz).
+2. **Delta Broadcasting:** Only shape coordinates and action deltas (not full canvas state) are broadcast over WebSockets to active room peers.
+3. **Prisma & Postgres Snapshotting:** Debounced state snapshots are persisted periodically to PostgreSQL, allowing users to leave and resume their canvas at any time.
+
+Try the live canvas at [Picasso Demo](https://cali-web-one.vercel.app/) or view the code on [GitHub](https://github.com/DevashishSharma-codes).

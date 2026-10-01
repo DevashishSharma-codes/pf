@@ -7,9 +7,9 @@ import Link from "next/link";
 import { Box } from "./box";
 import { cn } from "@/lib/utils";
 import {
-  IconAppWindowFilled,
-  IconBrandZoom,
-  IconVideoFilled,
+  IconBriefcase,
+  IconCode,
+  IconMail,
 } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import { SPRING_CONFIG } from "@/lib/motion-config";
@@ -41,36 +41,36 @@ export const WorkWithMe = () => {
 
   const work: WorkItem[] = [
     {
-      title: "Consultation",
-      description: "Get on a paid call with me to discuss your things.",
+      title: "Engineering Roles",
+      description: "Full-Stack, Backend & AI systems",
       type: "link",
-      href: "https://cal.com/manu-arora-lacvgj/hour",
+      href: "https://linkedin.com/in/devashish-sharma-aa470832a",
       boxClassName:
         "bg-linear-to-b from-blue-400 to-blue-600 ring-offset-blue-500",
       skeleton: (
-        <IconBrandZoom className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconBriefcase className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
     {
-      title: "Hire me and my team",
-      description: "Let's build a world class website for your business.",
+      title: "Freelance Projects",
+      description: "Scalable web apps, APIs & AI platforms",
       type: "link",
-      href: "https://aceternity.com",
+      href: "https://linkedin.com/in/devashish-sharma-aa470832a",
       boxClassName:
         "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
       skeleton: (
-        <IconAppWindowFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconCode className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
     {
-      title: "Sponsor my video",
-      description: "Get your brand in front of my audience.",
+      title: "Direct Email",
+      description: "devashishsharma2157@gmail.com",
       type: "copyEmail",
-      email: "manu@aceternity.com",
+      email: "devashishsharma2157@gmail.com",
       boxClassName:
         "bg-linear-to-b from-emerald-400 to-emerald-600 ring-offset-emerald-500",
       skeleton: (
-        <IconVideoFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconMail className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
   ];
@@ -82,25 +82,44 @@ export const WorkWithMe = () => {
   );
 
   return (
-    <section className="">
+    <section id="contact">
       <Subheading>Work with me</Subheading>
       {mounted ? createPortal(toast, document.body) : null}
-      <div className="mt-8 flex flex-col gap-6">
+      <div className="mt-4 flex flex-col gap-3">
         {work.map((item) => {
           if (item.type === "copyEmail") {
             return (
               <button
                 type="button"
                 onClick={() => handleCopyEmail(item.email)}
-                className="flex w-full cursor-pointer flex-col items-start gap-1 text-left md:flex-row md:items-center md:gap-2"
+                className="group flex w-full cursor-pointer items-center gap-3 text-left transition-colors"
                 key={item.title}
               >
-                <Box className={cn("", item.boxClassName)}>{item.skeleton}</Box>
-                <p className="text-foreground shrink-0 font-medium">
-                  {item.title}
-                </p>
-                <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
-                <p className="text-foreground/70">{item.description}</p>
+                <Box className={`shrink-0 ${item.boxClassName}`}>
+                  {item.skeleton}
+                </Box>
+                <div className="flex flex-1 items-center justify-between gap-2 text-sm md:text-[15px]">
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-foreground group-hover:text-primary transition-colors shrink-0">
+                      {item.title}
+                    </span>
+                    <span className="text-foreground/35 font-light shrink-0">
+                      /
+                    </span>
+                    <span className="text-foreground/75 font-normal">
+                      {item.email}
+                    </span>
+                  </div>
+                  <span className="shrink-0 text-[11px] font-medium px-2 py-0.5 rounded-[4px] border border-neutral-300 dark:border-neutral-700/80 bg-neutral-100 dark:bg-neutral-800/80 text-foreground/70 group-hover:text-foreground group-hover:border-neutral-400 dark:group-hover:border-neutral-600 transition-colors">
+                    {copied ? (
+                      <span className="text-emerald-500 font-semibold flex items-center gap-1">
+                        Copied! ✓
+                      </span>
+                    ) : (
+                      "Click to copy"
+                    )}
+                  </span>
+                </div>
               </button>
             );
           }
@@ -109,15 +128,23 @@ export const WorkWithMe = () => {
             <Link
               href={item.href}
               target="_blank"
-              className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
+              className="group flex items-center gap-3 transition-colors"
               key={item.title}
             >
-              <Box className={cn("", item.boxClassName)}>{item.skeleton}</Box>
-              <p className="text-foreground shrink-0 font-medium">
-                {item.title}
-              </p>
-              <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
-              <p className="text-foreground/70">{item.description}</p>
+              <Box className={`shrink-0 ${item.boxClassName}`}>
+                {item.skeleton}
+              </Box>
+              <div className="flex items-center gap-2 text-sm md:text-[15px]">
+                <span className="font-semibold text-foreground group-hover:text-primary transition-colors shrink-0">
+                  {item.title}
+                </span>
+                <span className="text-foreground/35 font-light shrink-0">
+                  /
+                </span>
+                <span className="text-foreground/75 font-normal">
+                  {item.description}
+                </span>
+              </div>
             </Link>
           );
         })}

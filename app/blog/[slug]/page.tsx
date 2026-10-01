@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getFiles, getFileBySlug } from "@/lib/mdx";
 import BlogPostClient from "./BlogPostClient";
 
-const siteUrl = "https://manuarora.in";
+const siteUrl = "https://mac-portfolio-2kzn.vercel.app";
 
 type PostFrontMatter = {
   title: string;

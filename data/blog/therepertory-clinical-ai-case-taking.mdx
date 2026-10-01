@@ -1,0 +1,38 @@
+---
+title: "Engineering TheRepertory: Shipping Production AI for Clinicians at 21Spheres"
+publishedAt: "2026-06-10"
+summary: "Lessons from building an AI case-taking workflow and 8+ methodology remedy ranking engine used daily by practicing medical doctors."
+image: "/avatar.jpg"
+---
+
+Building consumer AI apps is vastly different from building AI tools for healthcare professionals. When practicing doctors rely on software during active patient consultations, **speed, deterministic reproducibility, and workflow ergonomics** matter far more than flashy demos.
+
+During my Full Stack Internship at **21Spheres**, I owned the end-to-end delivery of the AI case-taking and Repertory diagnostic engine on [TheRepertory](https://stage.therepertory.com/).
+
+---
+
+### Understanding the Clinical Workflow
+
+In classical repertorization, clinicians analyze patient symptom complexes across multiple philosophical repertory methodologies (including Kent, Boger, Boenninghausen, and others). 
+
+Previously, searching across these disparate methodologies was fractured and time-consuming. We addressed this by:
+
+1. **Expanding Methodological Coverage (1 → 8+):**
+   Coordinating with UI/UX, product, and data teams to structure remedy datasets across 8+ standard clinical methodologies into unified schemas.
+
+2. **Real-Time Q&A & Remedy-Ranking Pipeline:**
+   Designing an interactive query and ranking pipeline that assists the clinician in formulating symptom rubrics in real-time, drastically cutting consultation prep time.
+
+3. **Resilient WebSocket Sessions:**
+   Patient queues and live case sessions depend on robust WebSockets. Fixing stale closure bugs and reconnection backoffs prevented clinician disconnections during active sessions.
+
+4. **Production CI/CD to AWS ECS via ECR:**
+   Prioritizing automated testing (60+ Jest test suites) and a continuous integration pipeline targeting AWS ECS containers, ensuring healthcare-grade stability on every release.
+
+---
+
+### Key Takeaway
+
+Technical excellence in production healthcare software is about **empathy with clinical users**: streamlining complex domain methodologies into dependable, low-latency interfaces that doctors can trust.
+
+Explore the platform at [TheRepertory](https://stage.therepertory.com/).
