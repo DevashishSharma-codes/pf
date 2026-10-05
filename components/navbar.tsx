@@ -53,8 +53,8 @@ export const Navbar = () => {
 
           {/* Top Full-Width Typography in Geist Pixel */}
           <div className="w-full text-center sm:text-justify text-[11.5px] sm:text-[12px] md:text-[12.5px] font-pixel uppercase tracking-[0.02em] sm:tracking-[0.03em] leading-[1.45] text-foreground select-none pb-1.5">
-            HEY, I’M DEVASHISH SHARMA. I BUILD PRODUCTION SYSTEMS WITH REAL ATTENTION
-            TO HOW THEY FEEL — THE SPACING, THE RHYTHM, THE QUIET DETAILS THAT MAKE AN
+            <span className="text-[#c3f53b] font-medium">HEY, I’M DEVASHISH SHARMA.</span> I BUILD PRODUCTION SYSTEMS WITH REAL ATTENTION
+            TO HOW THEY FEEL, THE SPACING, THE RHYTHM, THE QUIET DETAILS THAT MAKE AN
             INTERFACE FEEL INTENTIONAL.
           </div>
 
@@ -64,9 +64,9 @@ export const Navbar = () => {
             <div className="hidden sm:flex flex-1 flex-col justify-between text-right py-0.5">
               <div className="flex flex-col gap-2">
                 <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground select-none">
-                  <span className="text-primary font-medium">I MAKE</span> REAL-TIME SYSTEMS, LOW-LATENCY TOOLS, AI WORKFLOWS… I WORK <span className="whitespace-nowrap">FULL-STACK.</span>
+                  <span className="text-[#c3f53b] font-medium">I MAKE</span> REAL-TIME SYSTEMS, LOW-LATENCY TOOLS, AI WORKFLOWS… I WORK <span className="whitespace-nowrap">FULL-STACK.</span>
                 </p>
-                <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground/80 select-none">
+                <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground select-none">
                   BUT DESIGN IS NEVER AN AFTERTHOUGHT. USUALLY WITH A SONG PLAYING ON MY MAC.
                 </p>
               </div>
@@ -102,11 +102,11 @@ export const Navbar = () => {
             <div className="hidden sm:flex flex-1 flex-col justify-between text-left py-0.5">
               <div className="flex flex-col gap-2.5">
                 <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground select-none">
-                  <span className="text-primary font-medium">SOMETIMES I WRITE.</span> NOT OFTEN,
+                  <span className="text-[#c3f53b] font-medium">SOMETIMES I WRITE.</span> NOT OFTEN,
                   <br />
-                  NOT ON A SCHEDULE — JUST WHEN SOMETHING STAYS WITH ME LONG ENOUGH TO ASK FOR WORDS.
+                  NOT ON A SCHEDULE, JUST WHEN SOMETHING STAYS WITH ME LONG ENOUGH TO ASK FOR WORDS.
                 </p>
-                <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground/80 select-none">
+                <p className="text-[10px] md:text-[11px] font-pixel uppercase tracking-[0.02em] leading-[1.4] text-foreground select-none">
                   THOUGHTS ON DESIGN,
                   <br />
                   SYSTEMS, THE QUIET PARTS OF BUILDING THINGS.
@@ -125,10 +125,10 @@ export const Navbar = () => {
           {/* Mobile Flanking Text (shown cleanly below photo on small screens) */}
           <div className="sm:hidden w-full text-center text-[10.5px] font-pixel uppercase tracking-[0.02em] leading-[1.45] text-foreground select-none mt-2.5 flex flex-col gap-2">
             <p>
-              <span className="text-primary font-medium">I MAKE</span> REAL-TIME SYSTEMS, LOW-LATENCY TOOLS, AI WORKFLOWS… I WORK FULL-STACK. BUT DESIGN IS NEVER AN AFTERTHOUGHT. USUALLY WITH A SONG PLAYING ON MY MAC.
+              <span className="text-[#c3f53b] font-medium">I MAKE</span> REAL-TIME SYSTEMS, LOW-LATENCY TOOLS, AI WORKFLOWS… I WORK FULL-STACK. BUT DESIGN IS NEVER AN AFTERTHOUGHT. USUALLY WITH A SONG PLAYING ON MY MAC.
             </p>
-            <p className="text-foreground/80 text-[10px]">
-              <span className="text-primary font-medium">SOMETIMES I WRITE.</span> NOT OFTEN, NOT ON A SCHEDULE — JUST WHEN SOMETHING STAYS WITH ME LONG ENOUGH TO ASK FOR WORDS. THOUGHTS ON DESIGN, SYSTEMS, THE QUIET PARTS OF BUILDING THINGS. MOSTLY NOTES FROM THE PROCESS, WRITTEN LATE WITH A SONG STILL PLAYING.
+            <p className="text-foreground text-[10px]">
+              <span className="text-[#c3f53b] font-medium">SOMETIMES I WRITE.</span> NOT OFTEN, NOT ON A SCHEDULE, JUST WHEN SOMETHING STAYS WITH ME LONG ENOUGH TO ASK FOR WORDS. THOUGHTS ON DESIGN, SYSTEMS, THE QUIET PARTS OF BUILDING THINGS. MOSTLY NOTES FROM THE PROCESS, WRITTEN LATE WITH A SONG STILL PLAYING.
             </p>
           </div>
 
@@ -199,7 +199,7 @@ export const Navbar = () => {
             </svg>
             <span className="truncate">
               <span className="text-foreground/50 uppercase">LISTENING:</span>
-              <span className="mx-1.5 text-foreground/40">—</span>
+              <span className="mx-1 text-foreground/40">·</span>
               <span className="text-foreground/90 font-medium group-hover:text-primary transition-colors uppercase">
                 The Less I Know The Better
               </span>
@@ -244,7 +244,7 @@ export const Navbar = () => {
             </svg>
             <span className="truncate">
               <span className="text-foreground/50 uppercase">LISTENING:</span>
-              <span className="mx-1.5 text-foreground/40">—</span>
+              <span className="mx-1 text-foreground/40">·</span>
               <span className="text-foreground/90 font-medium group-hover:text-primary transition-colors uppercase">
                 The Less I Know The Better
               </span>
