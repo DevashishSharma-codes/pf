@@ -17,7 +17,7 @@ export const Focus = () => {
         <IconAppWindowFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-blue-400 to-indigo-600 ring-offset-blue-500",
+        "bg-linear-to-b from-[#6e8b71] to-[#4a634d] ring-offset-[#4f6651]",
     },
     {
       title: "AI, RAG & Agentic Workflows",
@@ -27,7 +27,7 @@ export const Focus = () => {
         <IconTools className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-purple-400 to-violet-600 ring-offset-purple-500",
+        "bg-linear-to-b from-[#5f7a62] to-[#435745] ring-offset-[#4f6651]",
     },
     {
       title: "Scalable Backend & Cloud Systems",
@@ -37,7 +37,7 @@ export const Focus = () => {
         <IconPaintFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-emerald-400 to-teal-600 ring-offset-emerald-500",
+        "bg-linear-to-b from-[#3a3d39] to-[#252824] ring-offset-[#3a3d39]",
     },
   ];
   return (

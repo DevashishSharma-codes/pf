@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Container from "@/components/container";
-import { Header } from "@/components/header";
 import { Work } from "@/components/work";
 import { Projects } from "@/components/projects";
 import { ThreeDotsSeparator } from "@/components/separator";
@@ -12,6 +11,8 @@ type HomeBlogPost = {
   slug: string;
   publishedAt: string;
   title: string;
+  summary?: string;
+  image?: string;
 };
 
 export const metadata: Metadata = {
@@ -29,9 +30,7 @@ export default async function Home() {
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
   return (
-    <Container className="pt-2 pb-16">
-      <Header />
-      <ThreeDotsSeparator />
+    <Container className="pt-4 pb-16">
       <Work />
       <ThreeDotsSeparator />
       <Projects />

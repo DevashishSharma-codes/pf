@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Schibsted_Grotesk, Newsreader, Caveat } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { GeistPixelSquare } from "geist/font/pixel";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -39,14 +41,14 @@ export const metadata: Metadata = {
     siteName: "Devashish Sharma",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/avatar.jpg", width: 800, height: 800, alt: "Devashish Sharma" }],
+    images: [{ url: "/devashish-photo.jpg", width: 800, height: 800, alt: "Devashish Sharma" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Devashish Sharma - Full Stack Developer & Technical Builder",
     description:
       "CS undergraduate, Full-Stack Developer, and Technical Builder. Experienced in owning features end-to-end, building real-time systems, and shipping production AI & web platforms.",
-    images: ["/avatar.jpg"],
+    images: ["/devashish-photo.jpg"],
   },
 };
 
@@ -84,6 +86,8 @@ export default function RootLayout({ children }) {
         newsreader.variable,
         caveat.variable,
         GeistSans.variable,
+        GeistMono.variable,
+        GeistPixelSquare.variable,
         "font-sans antialiased",
       )}
       suppressHydrationWarning

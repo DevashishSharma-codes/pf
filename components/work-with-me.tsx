@@ -46,7 +46,7 @@ export const WorkWithMe = () => {
       type: "link",
       href: "https://linkedin.com/in/devashish-sharma-aa470832a",
       boxClassName:
-        "bg-linear-to-b from-blue-400 to-blue-600 ring-offset-blue-500",
+        "bg-linear-to-b from-[#6e8b71] to-[#4a634d] ring-offset-[#4f6651]",
       skeleton: (
         <IconBriefcase className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
@@ -57,7 +57,7 @@ export const WorkWithMe = () => {
       type: "link",
       href: "https://linkedin.com/in/devashish-sharma-aa470832a",
       boxClassName:
-        "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+        "bg-linear-to-b from-[#5f7a62] to-[#435745] ring-offset-[#4f6651]",
       skeleton: (
         <IconCode className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
@@ -68,7 +68,7 @@ export const WorkWithMe = () => {
       type: "copyEmail",
       email: "devashishsharma2157@gmail.com",
       boxClassName:
-        "bg-linear-to-b from-emerald-400 to-emerald-600 ring-offset-emerald-500",
+        "bg-linear-to-b from-[#4f6651] to-[#364738] ring-offset-[#4f6651]",
       skeleton: (
         <IconMail className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
@@ -82,37 +82,37 @@ export const WorkWithMe = () => {
   );
 
   return (
-    <section id="contact">
+    <section id="contact" className="flex flex-col font-pixel">
       <Subheading>Work with me</Subheading>
       {mounted ? createPortal(toast, document.body) : null}
-      <div className="mt-4 flex flex-col gap-3">
+      <div className="mt-4 flex flex-col gap-3 font-pixel">
         {work.map((item) => {
           if (item.type === "copyEmail") {
             return (
               <button
                 type="button"
                 onClick={() => handleCopyEmail(item.email)}
-                className="group flex w-full cursor-pointer items-center gap-3 text-left transition-colors"
+                className="group flex w-full cursor-pointer items-center gap-3 text-left transition-colors select-none"
                 key={item.title}
               >
                 <Box className={`shrink-0 ${item.boxClassName}`}>
                   {item.skeleton}
                 </Box>
                 <div className="flex flex-1 items-center justify-between gap-2 text-sm md:text-[15px]">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-foreground group-hover:text-primary transition-colors shrink-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-normal uppercase tracking-wide text-[12.5px] sm:text-[13.5px] text-foreground group-hover:text-primary transition-colors shrink-0">
                       {item.title}
                     </span>
-                    <span className="text-foreground/35 font-light shrink-0">
+                    <span className="text-foreground/35 font-normal shrink-0 text-[11px]">
                       /
                     </span>
-                    <span className="text-foreground/75 font-normal">
+                    <span className="text-foreground/75 font-normal text-[11px] sm:text-[12px] uppercase tracking-wide">
                       {item.email}
                     </span>
                   </div>
-                  <span className="shrink-0 text-[11px] font-medium px-2 py-0.5 rounded-[4px] border border-neutral-300 dark:border-neutral-700/80 bg-neutral-100 dark:bg-neutral-800/80 text-foreground/70 group-hover:text-foreground group-hover:border-neutral-400 dark:group-hover:border-neutral-600 transition-colors">
+                  <span className="shrink-0 text-[9.5px] sm:text-[10px] font-normal uppercase tracking-wider px-2 py-0.5 rounded-[4px] border border-white/10 bg-white/4 text-foreground/70 group-hover:text-foreground group-hover:border-white/25 transition-colors font-pixel">
                     {copied ? (
-                      <span className="text-emerald-500 font-semibold flex items-center gap-1">
+                      <span className="text-[#c3f53b] font-normal flex items-center gap-1">
                         Copied! ✓
                       </span>
                     ) : (
@@ -128,20 +128,20 @@ export const WorkWithMe = () => {
             <Link
               href={item.href}
               target="_blank"
-              className="group flex items-center gap-3 transition-colors"
+              className="group flex items-center gap-3 transition-colors select-none"
               key={item.title}
             >
               <Box className={`shrink-0 ${item.boxClassName}`}>
                 {item.skeleton}
               </Box>
-              <div className="flex items-center gap-2 text-sm md:text-[15px]">
-                <span className="font-semibold text-foreground group-hover:text-primary transition-colors shrink-0">
+              <div className="flex items-center gap-2 text-sm md:text-[15px] flex-wrap">
+                <span className="font-normal uppercase tracking-wide text-[12.5px] sm:text-[13.5px] text-foreground group-hover:text-primary transition-colors shrink-0">
                   {item.title}
                 </span>
-                <span className="text-foreground/35 font-light shrink-0">
+                <span className="text-foreground/35 font-normal shrink-0 text-[11px]">
                   /
                 </span>
-                <span className="text-foreground/75 font-normal">
+                <span className="text-foreground/75 font-normal text-[11px] sm:text-[12px] uppercase tracking-wide">
                   {item.description}
                 </span>
               </div>
@@ -172,7 +172,7 @@ const CopyAnimation = () => {
         filter: "blur(10px)",
       }}
       transition={SPRING_CONFIG}
-      className="pointer-events-none fixed inset-x-0 bottom-20 z-200 mx-auto flex w-fit items-center justify-center gap-2 rounded-lg bg-linear-to-b from-blue-400 to-blue-600 p-4 text-center text-white shadow-lg ring-1 shadow-black/10 ring-white/50 ring-offset-2 ring-offset-blue-500 ring-inset"
+      className="pointer-events-none fixed inset-x-0 bottom-20 z-200 mx-auto flex w-fit items-center justify-center gap-2 rounded-lg bg-linear-to-b from-[#c3f53b] to-[#8ebc22] p-3.5 text-center text-[#141a15] font-pixel text-[11.5px] uppercase tracking-wider shadow-lg ring-1 shadow-black/20 ring-black/20 ring-offset-2 ring-offset-[#c3f53b] ring-inset"
     >
       <EmailIcon /> Email Copied to clipboard
     </motion.div>

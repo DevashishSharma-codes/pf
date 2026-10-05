@@ -43,7 +43,7 @@ const Signature = () => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 380 95"
-      className="mx-auto h-9 w-auto text-[#adcb7b]"
+      className="mx-auto h-9 w-auto text-[#c3f53b] transition-colors"
       fill="none"
     >
       {/* Devashish handwritten cursive signature */}

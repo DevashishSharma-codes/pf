@@ -8,8 +8,9 @@ import { DottedSeparator } from "./separator";
 
 type FontOption = "inter" | "schibsted" | "geist";
 type ColorOption =
-  | "regular"
+  | "pantone"
   | "black"
+  | "regular"
   | "rose"
   | "emerald"
   | "blue"
@@ -38,6 +39,18 @@ const COLORS: {
   ringOffset: string;
   activeRing: string;
 }[] = [
+  {
+    id: "pantone",
+    label: "Forest & Electric Lime (PANTONE 2411 U / P 179-1 U / Lime)",
+    swatch: "bg-[#c3f53b] ring-1 ring-[#4f6651] shadow-xs",
+    bg: "#1c241d",
+    primary: "#c3f53b",
+    foreground: "#f7f7f5",
+    gradientFrom: "from-[#c3f53b]",
+    gradientTo: "to-[#4f6651]",
+    ringOffset: "ring-offset-[#1c241d]",
+    activeRing: "ring-[#c3f53b]",
+  },
   {
     id: "black",
     label: "Espresso",
@@ -124,7 +137,7 @@ const COLORS: {
   },
 ];
 
-const STORAGE_KEY = "site-settings-v3";
+const STORAGE_KEY = "site-settings-v6";
 
 function isColorOption(value: unknown): value is ColorOption {
   return typeof value === "string" && COLORS.some((c) => c.id === value);
@@ -132,7 +145,7 @@ function isColorOption(value: unknown): value is ColorOption {
 
 function loadSettings(): { font: FontOption; color: ColorOption } {
   if (typeof window === "undefined")
-    return { font: "schibsted", color: "black" };
+    return { font: "schibsted", color: "pantone" };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
@@ -140,7 +153,7 @@ function loadSettings(): { font: FontOption; color: ColorOption } {
         font?: FontOption;
         color?: unknown;
       };
-      const color = isColorOption(parsed.color) ? parsed.color : "black";
+      const color = isColorOption(parsed.color) ? parsed.color : "pantone";
       const font =
         parsed.font && FONTS.some((f) => f.id === parsed.font)
           ? parsed.font
@@ -148,7 +161,7 @@ function loadSettings(): { font: FontOption; color: ColorOption } {
       return { font, color };
     }
   } catch {}
-  return { font: "schibsted", color: "black" };
+  return { font: "schibsted", color: "pantone" };
 }
 
 function saveSettings(font: FontOption, color: ColorOption) {
@@ -162,6 +175,7 @@ function applySettings(font: FontOption, color: ColorOption) {
 
   root.style.setProperty("--primary-font", fontConfig.variable);
   root.style.setProperty("--theme-bg", colorConfig.bg);
+  root.style.setProperty("--background", colorConfig.bg);
   root.style.setProperty("--primary", colorConfig.primary);
   root.style.setProperty("--foreground", colorConfig.foreground);
 }
@@ -169,7 +183,7 @@ function applySettings(font: FontOption, color: ColorOption) {
 export const Settings = () => {
   const [open, setOpen] = useState(false);
   const [font, setFont] = useState<FontOption>("schibsted");
-  const [color, setColor] = useState<ColorOption>("black");
+  const [color, setColor] = useState<ColorOption>("pantone");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

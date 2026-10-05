@@ -4,64 +4,49 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div>
-      <div className="text-foreground pt-4 text-base">
-        I'm a full-stack engineer and builder building{" "}
+    <div className="space-y-3.5 pt-2">
+      <div className="text-foreground text-base leading-relaxed">
+        Full-stack engineer & builder crafting{" "}
         <LinkPreview
           url="https://stage.therepertory.com/"
-          className="italic"
+          className="italic font-medium"
         >
           TheRepertory
         </LinkPreview>{" "}
         and{" "}
         <LinkPreview
           url="https://purplex-topaz.vercel.app/"
-          className="italic"
+          className="italic font-medium"
         >
           Purplex
         </LinkPreview>
-        . Over the past years, I've focused on architecting high-performance systems, real-time collaboration engines, and AI-powered software that people love to use.
-      </div>
-
-      <div className="text-foreground pt-4 text-base">
-        Currently interning as a Full Stack Developer at{" "}
-        <span className="font-medium">21Spheres</span>, engineering the AI case-taking and clinical diagnostic workflow platform for practicing clinicians and healthcare teams.
-      </div>
-
-      <div className="text-foreground pt-4 text-base">
-        I love building 0→1 products: from{" "}
+        . Currently engineering AI diagnostic workflows at{" "}
+        <span className="font-medium">21Spheres</span> and building 0→1 products like{" "}
         <LinkPreview
           url="https://cali-web-one.vercel.app/"
-          className="italic"
+          className="italic font-medium"
         >
           Picasso
-        </LinkPreview>{" "}
-        (a sub-50ms real-time collaborative canvas) to freelance financial platforms like{" "}
-        <LinkPreview
-          url="https://goals.wealthswisdom.com/"
-          className="italic"
-        >
-          Wealth's Wisdom
         </LinkPreview>
-        . I regularly{" "}
+        .
+      </div>
+
+      <div className="text-foreground text-base leading-relaxed">
+        I{" "}
         <Link
           href="/blog"
-          className="italic underline"
+          className="italic underline hover:text-primary transition-colors"
         >
           write
         </Link>{" "}
-        about real-time architectures, WebSockets, RAG workflows, and lessons from my engineering journey.
-      </div>
-
-      <div className="text-foreground pt-4 text-base">
-        Always open to interesting conversations about engineering, startups, and new opportunities.{" "}
+        about real-time systems and AI architectures. Always open to new opportunities —{" "}
         <a
           href="mailto:devashishsharma2157@gmail.com"
-          className="italic underline"
+          className="italic underline hover:text-primary transition-colors"
         >
-          Say hello
+          say hello
         </a>{" "}
-        or connect with me on{" "}
+        or connect on{" "}
         <LinkPreview
           url="https://github.com/DevashishSharma-codes"
           className="italic"
@@ -75,7 +60,7 @@ export const Header = () => {
         >
           LinkedIn
         </LinkPreview>
-        , or{" "}
+        , and{" "}
         <LinkPreview
           url="https://www.instagram.com/devashiiiiit/"
           className="italic"
@@ -87,3 +72,4 @@ export const Header = () => {
     </div>
   );
 };
+

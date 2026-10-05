@@ -6,6 +6,7 @@ module.exports = {
       { protocol: "https", hostname: "assets.aceternity.com" }, // Aceternity Avatar
       { protocol: "https", hostname: "pbs.twimg.com" }, // Twitter Profile Picture
       { protocol: "https", hostname: "api.microlink.io" }, // Microlink Image Preview
+      { protocol: "https", hostname: "images.unsplash.com" }, // Unsplash
     ],
   },
   outputFileTracingRoot: path.join(__dirname),

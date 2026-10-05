@@ -20,7 +20,7 @@ export const Companies = () => {
         <CursorIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-blue-400 to-indigo-600 ring-offset-blue-500",
+        "bg-linear-to-b from-[#6e8b71] to-[#4a634d] ring-offset-[#4f6651]",
     },
     {
       title: "Wealth's Wisdom",
@@ -29,7 +29,7 @@ export const Companies = () => {
         <ReplitIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-orange-400 to-amber-600 ring-offset-orange-500",
+        "bg-linear-to-b from-[#5f7a62] to-[#435745] ring-offset-[#4f6651]",
     },
     {
       title: "Oracle & PIET",
@@ -38,7 +38,7 @@ export const Companies = () => {
         <HostingerIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-red-500 to-rose-700 ring-offset-red-500",
+        "bg-linear-to-b from-[#3a473b] to-[#252f26] ring-offset-[#3a473b]",
     },
     {
       title: "AWS Cloud",
@@ -47,7 +47,7 @@ export const Companies = () => {
         <StrapiIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-amber-400 to-yellow-600 ring-offset-amber-500",
+        "bg-linear-to-b from-[#4f6651] to-[#384a3a] ring-offset-[#4f6651]",
     },
     {
       title: "Neon & PostgreSQL",
@@ -56,7 +56,7 @@ export const Companies = () => {
         <NeonIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-green-400 to-emerald-600 ring-offset-green-500",
+        "bg-linear-to-b from-[#6b8c6e] to-[#4f6651] ring-offset-[#4f6651]",
     },
     {
       title: "Supabase & Clerk",
@@ -65,7 +65,7 @@ export const Companies = () => {
         <PosthogIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-teal-400 to-cyan-600 ring-offset-teal-500",
+        "bg-linear-to-b from-[#58735b] to-[#3c503f] ring-offset-[#4f6651]",
     },
   ];
   return (

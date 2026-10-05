@@ -227,10 +227,10 @@ export const Work = () => {
   };
 
   return (
-    <section id="experience" className="flex flex-col">
+    <section id="experience" className="flex flex-col font-pixel">
       <Subheading>Work Experience</Subheading>
 
-      <div className="mt-4 flex flex-col divide-y divide-neutral-200/50 dark:divide-neutral-800/60">
+      <div className="mt-4 flex flex-col divide-y divide-white/6 font-pixel">
         {experiences.map((exp) => {
           const isOpen = openIds.includes(exp.id);
 
@@ -242,15 +242,15 @@ export const Work = () => {
                 className="group flex cursor-pointer items-start justify-between gap-4 select-none"
               >
                 <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-foreground text-base font-semibold transition-colors group-hover:text-primary">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-foreground text-[13.5px] sm:text-[14.5px] md:text-[15.5px] font-normal uppercase tracking-wide transition-colors group-hover:text-primary">
                       {exp.company}
                     </span>
 
                     {/* Minimal squared working badge */}
                     {exp.isWorking && (
-                      <span className="flex items-center gap-1.5 rounded-[4px] border border-neutral-300 dark:border-neutral-700/70 bg-neutral-100 dark:bg-neutral-800/70 px-1.5 py-0.5 text-[11px] font-normal text-foreground/80">
-                        <span className="size-1.5 rounded-full bg-emerald-500" />
+                      <span className="flex items-center gap-1.5 rounded-[4px] border border-[#4f6651]/40 bg-[#4f6651]/20 px-1.5 py-0.5 text-[10px] sm:text-[10.5px] font-normal text-foreground/90 uppercase tracking-wider">
+                        <span className="size-1.5 rounded-full bg-[#c3f53b] shadow-[0_0_6px_rgba(195,245,59,0.7)] animate-pulse" />
                         Working
                       </span>
                     )}
@@ -258,7 +258,7 @@ export const Work = () => {
                     {/* Subtle squared hover chevron */}
                     <span
                       className={cn(
-                        "flex size-5 items-center justify-center rounded-[4px] border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 text-foreground/50 transition-colors",
+                        "flex size-5 items-center justify-center rounded-[4px] border border-white/10 bg-white/4 text-foreground/50 transition-colors",
                         "opacity-0 group-hover:opacity-100",
                         isOpen && "opacity-100 text-foreground",
                       )}
@@ -271,17 +271,17 @@ export const Work = () => {
                     </span>
                   </div>
 
-                  <p className="text-foreground/70 text-sm font-normal">
+                  <p className="text-foreground/70 text-[11.5px] sm:text-[12.5px] font-normal uppercase tracking-wide">
                     {exp.role}
                   </p>
                 </div>
 
                 {/* Right side period & location */}
                 <div className="flex flex-col items-end text-right shrink-0">
-                  <span className="text-foreground/80 text-xs md:text-sm font-normal">
+                  <span className="text-foreground/80 text-[11px] sm:text-[12px] font-normal uppercase tracking-wider">
                     {exp.period}
                   </span>
-                  <span className="text-foreground/45 text-xs font-normal">
+                  <span className="text-foreground/45 text-[10px] sm:text-[11px] font-normal uppercase tracking-wide mt-0.5">
                     {exp.location}
                   </span>
                 </div>
@@ -296,12 +296,12 @@ export const Work = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2, ease: "easeInOut" }}
-                    className="overflow-hidden"
+                    className="overflow-hidden font-pixel"
                   >
                     <div className="pt-4 pb-2 flex flex-col gap-4">
                       {/* Technologies & Tools */}
                       <div>
-                        <h4 className="text-foreground/50 font-mono text-xs font-medium uppercase tracking-wider mb-2.5">
+                        <h4 className="text-foreground/50 text-[10px] sm:text-[11px] font-normal uppercase tracking-wider mb-2.5">
                           Technologies & Tools
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -309,7 +309,7 @@ export const Work = () => {
                             <div
                               key={tech.name}
                               title={tech.name}
-                              className="flex size-8 md:size-8.5 items-center justify-center rounded-[8px] border border-dashed border-neutral-300 dark:border-neutral-700/80 bg-neutral-100/80 dark:bg-neutral-900/80 shadow-2xs transition-all hover:scale-110 hover:border-neutral-400 dark:hover:border-neutral-500"
+                              className="flex size-8 md:size-8.5 items-center justify-center rounded-[6px] border border-dashed border-white/15 bg-white/4 shadow-2xs transition-all hover:scale-110 hover:border-white/30"
                             >
                               {tech.icon ? (
                                 tech.icon
@@ -331,13 +331,13 @@ export const Work = () => {
 
                       {/* What I've done */}
                       <div>
-                        <h4 className="text-foreground/50 font-mono text-xs font-medium uppercase tracking-wider mb-2">
+                        <h4 className="text-foreground/50 text-[10px] sm:text-[11px] font-normal uppercase tracking-wider mb-2">
                           What I've done
                         </h4>
-                        <ul className="flex flex-col gap-1.5 text-xs md:text-sm text-foreground/75 leading-relaxed pl-1">
+                        <ul className="flex flex-col gap-2 text-[11px] sm:text-[12px] text-foreground/80 leading-relaxed pl-1 uppercase tracking-wide">
                           {exp.achievements.map((item, index) => (
                             <li key={index} className="flex items-start gap-2">
-                              <span className="text-foreground/40 mt-1 select-none text-[10px]">
+                              <span className="text-[#c3f53b] mt-0.5 select-none text-[10px]">
                                 ▪
                               </span>
                               <span>{item}</span>
@@ -358,7 +358,7 @@ export const Work = () => {
       <button
         type="button"
         onClick={toggleAll}
-        className="mx-auto mt-6 flex items-center justify-center rounded-[6px] border border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900/60 px-3.5 py-1.5 text-xs font-medium text-foreground/80 hover:text-foreground hover:bg-neutral-200/80 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+        className="mx-auto mt-6 flex items-center justify-center rounded-[6px] border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-2 text-[11px] font-normal uppercase tracking-wider text-foreground/80 hover:text-primary transition-all cursor-pointer font-pixel"
       >
         {allExpanded ? "Hide work experiences" : "Show all work experiences"}
       </button>

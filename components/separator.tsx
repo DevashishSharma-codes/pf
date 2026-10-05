@@ -22,9 +22,9 @@ export function ThreeDotsSeparator({ className }: { className?: string }) {
         className,
       )}
     >
-      <span className="size-1.5 rounded-full bg-[#e06c45] shadow-xs" />
-      <span className="size-1.5 rounded-full bg-[#e5a93c] shadow-xs" />
-      <span className="size-1.5 rounded-full bg-[#63a375] shadow-xs" />
+      <span className="size-1.5 rounded-full bg-[#c3f53b] shadow-xs" title="Electric Lime" />
+      <span className="size-1.5 rounded-full bg-[#f7f7f5] shadow-xs opacity-90" title="PANTONE P 179-1 U" />
+      <span className="size-1.5 rounded-full bg-[#4f6651] shadow-xs" title="PANTONE 2411 U" />
     </div>
   );
 }
