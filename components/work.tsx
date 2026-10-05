@@ -208,7 +208,7 @@ const experiences: ExperienceItem[] = [
 ];
 
 export const Work = () => {
-  const [openIds, setOpenIds] = useState<string[]>(["enacton"]);
+  const [openIds, setOpenIds] = useState<string[]>([]);
 
   const toggleItem = (id: string) => {
     setOpenIds((prev) =>

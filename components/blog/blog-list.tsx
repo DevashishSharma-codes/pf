@@ -333,13 +333,13 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 className="group flex flex-col gap-2 cursor-pointer select-none transition-all duration-300"
               >
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Villa Kogelhofun
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Noord Beveland · Realtime Canvas
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-3">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-3 font-normal">
                     Sub-50ms collaborative whiteboard engine built with WebSockets, optimistic conflict resolution, and Next.js.
                   </p>
                 </div>
@@ -356,7 +356,7 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                   <RetroCrosswordOverlay config={CROSSWORD_P2} />
                 </div>
 
-                <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit">
+                <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit">
                   {p2.publishedAt ? formatPostDate(p2.publishedAt) : "Livraison hiver 2016"}
                 </span>
               </Link>
@@ -367,13 +367,13 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 className="group flex flex-col gap-2 cursor-pointer select-none transition-all duration-300 pt-1"
               >
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Glebe House
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Knokke · Sockets Scale
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-3">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-3 font-normal">
                     Resilient WebSocket architecture eliminating stale closures and queue lag.
                   </p>
                 </div>
@@ -390,7 +390,7 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                   <RetroCrosswordOverlay config={CROSSWORD_P4} />
                 </div>
 
-                <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit">
+                <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit">
                   {p4.publishedAt ? formatPostDate(p4.publishedAt) : "Livraison été 2015"}
                 </span>
               </Link>
@@ -406,17 +406,17 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
               >
                 {/* Text on top */}
                 <div className="flex flex-col text-left sm:text-right pr-1">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Non Program Pavillon
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Barcelone · AI & RAG Engine
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-3">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-3 font-normal">
                     Conversational AI engine combining LangGraph, vector search, and multi-agent reasoning.
                   </p>
                   <div className="flex items-center justify-start sm:justify-end mt-1.5">
-                    <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15">
+                    <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20">
                       {p1.publishedAt ? formatPostDate(p1.publishedAt) : "Livraison hiver 2015"}
                     </span>
                   </div>
@@ -442,13 +442,13 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 className="group flex flex-col gap-2 cursor-pointer select-none transition-all duration-300 mt-2"
               >
                 <div className="flex flex-col text-left sm:text-right pr-1">
-                  <span className="text-[11px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[12.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Werkhaus
                   </span>
-                  <span className="text-[8.5px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Berlin · Craft & Design
                   </span>
-                  <p className="text-[8.5px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-2">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-2 font-normal">
                     Minimalist developer portfolio engineering with Next.js and craft.
                   </p>
                 </div>
@@ -465,7 +465,7 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                   <RetroCrosswordOverlay config={CROSSWORD_P6} />
                 </div>
 
-                <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit ml-0 sm:ml-auto">
+                <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit ml-0 sm:ml-auto">
                   {p6.publishedAt ? formatPostDate(p6.publishedAt) : "Livraison été 2014"}
                 </span>
               </Link>
@@ -492,16 +492,16 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     The Holiday Home
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Bern · Freelance Trust
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-3">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-3 font-normal">
                     Engineering playbooks for client scoping, pricing, and velocity.
                   </p>
-                  <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit mt-1.5">
+                  <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit mt-1.5">
                     {p5.publishedAt ? formatPostDate(p5.publishedAt) : "Livraison été 2014"}
                   </span>
                 </div>
@@ -527,16 +527,16 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
 
                 {/* Text Block Directly Below Photo */}
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Minimod
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Madrid · Clinical AI
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-4">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-4 font-normal">
                     Clinical AI case-taking platform engineered for homeopathy symptom repertorization and diagnostic reasoning.
                   </p>
-                  <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit mt-1.5">
+                  <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit mt-1.5">
                     {p3.publishedAt ? formatPostDate(p3.publishedAt) : "Livraison printemps 2015"}
                   </span>
                 </div>
@@ -564,16 +564,16 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Nedregate
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Paris · JS Internals
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-3">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-3 font-normal">
                     V8 engine pipelines, event loops, and memory heap architecture.
                   </p>
-                  <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit mt-1.5">
+                  <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit mt-1.5">
                     {p7.publishedAt ? formatPostDate(p7.publishedAt) : "Livraison été 2015"}
                   </span>
                 </div>
@@ -597,16 +597,16 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="text-[11.5px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
                     Carré Seine
                   </span>
-                  <span className="text-[9px] text-foreground/45 group-hover:text-foreground/75 transition-colors mt-0.5">
+                  <span className="text-[10px] text-foreground/70 group-hover:text-foreground/90 transition-colors mt-0.5">
                     Paris · Scale Portals
                   </span>
-                  <p className="text-[9px] text-foreground/60 group-hover:text-foreground/90 transition-colors leading-relaxed mt-1 line-clamp-2">
+                  <p className="text-[10.5px] sm:text-[11px] text-foreground/85 group-hover:text-foreground leading-relaxed mt-1 line-clamp-2 font-normal">
                     High-throughput verification pipelines under peak traffic.
                   </p>
-                  <span className="text-[8px] text-foreground/40 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/15 w-fit mt-1.5">
+                  <span className="text-[9px] text-foreground/60 group-hover:text-primary group-hover:border-primary transition-all duration-300 uppercase tracking-wider pb-0.5 border-b border-white/20 w-fit mt-1.5">
                     {p8.publishedAt ? formatPostDate(p8.publishedAt) : "Livraison hiver 2016"}
                   </span>
                 </div>
@@ -616,13 +616,13 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
           </div>
 
           {/* Spread Footer */}
-          <div className="w-full flex items-center justify-between pt-3 border-t border-white/6 mt-2 font-pixel">
-            <span className="text-[9px] text-foreground/35 uppercase tracking-wider select-none">
+          <div className="w-full flex items-center justify-between pt-3 border-t border-white/10 mt-2 font-pixel">
+            <span className="text-[10px] text-foreground/60 uppercase tracking-wider select-none">
               SELECTED ESSAYS & ARCHITECTURE CASE STUDIES
             </span>
             <Link
               href="/blog"
-              className="flex items-center gap-1 text-[10.5px] text-foreground/50 hover:text-primary transition-colors uppercase"
+              className="flex items-center gap-1 text-[11px] text-foreground/75 hover:text-primary transition-colors uppercase"
             >
               <span>VIEW ALL ESSAYS</span>
               <IconArrowUpRight className="size-3.5" />
@@ -631,7 +631,7 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
         </div>
       ) : (
         /* Minimalist List View Fallback */
-        <div className="w-full flex flex-col divide-y divide-white/6 mt-1 font-pixel">
+        <div className="w-full flex flex-col divide-y divide-white/10 mt-1 font-pixel">
           {posts.map((post, index) => (
             <Link
               href={`/blog/${post.slug}`}
@@ -643,10 +643,10 @@ export const BlogList = ({ posts = [] }: { posts?: Post[] }) => {
                   {post.title}
                 </span>
                 {post.summary ? (
-                  <p className="text-[11px] text-foreground/45 truncate mt-0.5">{post.summary}</p>
+                  <p className="text-[11.5px] text-foreground/75 truncate mt-0.5">{post.summary}</p>
                 ) : null}
               </div>
-              <span className="text-foreground/45 group-hover:text-primary shrink-0 text-[10px]">
+              <span className="text-foreground/65 group-hover:text-primary shrink-0 text-[10.5px]">
                 {formatPostDate(post.publishedAt)}
               </span>
             </Link>

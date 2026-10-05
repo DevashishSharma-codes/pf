@@ -508,57 +508,43 @@ export const Projects = () => {
         <div className="w-full h-1 bg-black/40 blur-[1px]" />
       </div>
 
-      {/* ================= INTERACTIVE BOOK DETAIL PANEL ================= */}
-      <div className="w-full mt-4 p-4 rounded-xl bg-neutral-900/60 border border-white/8 backdrop-blur-sm transition-all duration-300">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex flex-col gap-1 min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-mono font-medium text-[#c3f53b] px-2 py-0.5 rounded bg-[#c3f53b]/10 border border-[#c3f53b]/25">
-                {currentDisplay.category}
-              </span>
-              <h4 className="text-foreground text-sm sm:text-base font-semibold tracking-tight truncate">
-                {currentDisplay.title}
-              </h4>
-              <span className="text-foreground/45 text-xs font-mono">({currentDisplay.githubName})</span>
-            </div>
-            <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed max-w-2xl mt-0.5">
-              {currentDisplay.description}
-            </p>
-            <div className="flex items-center gap-1.5 flex-wrap mt-1">
-              <span className="text-[10px] font-mono text-[#9bb89e] bg-[#4f6651]/25 px-1.5 py-0.5 rounded border border-[#4f6651]/40">
-                ● {currentDisplay.language}
-              </span>
-              {currentDisplay.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] font-mono text-foreground/50 bg-white/4 px-1.5 py-0.5 rounded border border-white/5"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
+      {/* ================= INTERACTIVE BOOK DETAIL PANEL (MINIMAL, NO BG CARD, NO PILLS) ================= */}
+      <div className="w-full mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-1 transition-all duration-300">
+        <div className="flex flex-col gap-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-[11px] font-medium text-[#c3f53b] uppercase tracking-wider">
+              {currentDisplay.category}
+            </span>
+            <span className="text-foreground/30 text-xs">·</span>
+            <h4 className="text-foreground text-sm sm:text-base font-semibold tracking-tight truncate">
+              {currentDisplay.title}
+            </h4>
+            <span className="text-foreground/45 text-xs font-mono">({currentDisplay.githubName})</span>
           </div>
+          <p className="text-foreground/80 text-xs sm:text-sm leading-relaxed max-w-2xl mt-0.5">
+            {currentDisplay.description}
+          </p>
+        </div>
 
-          <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
-            {currentDisplay.githubUrl && (
-              <Link
-                href={currentDisplay.githubUrl}
-                target="_blank"
-                className="flex items-center gap-1 px-3 py-2 rounded-lg bg-neutral-800/80 hover:bg-neutral-800 text-foreground/80 hover:text-foreground text-xs font-mono transition-all duration-200 border border-white/10"
-              >
-                <IconBrandGithub className="size-3.5" />
-                <span>GITHUB</span>
-              </Link>
-            )}
+        <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
+          {currentDisplay.githubUrl && (
             <Link
-              href={currentDisplay.href}
+              href={currentDisplay.githubUrl}
               target="_blank"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#c3f53b]/15 hover:bg-[#c3f53b]/25 text-[#f7f7f5] hover:text-[#c3f53b] text-xs font-mono font-medium transition-all duration-200 border border-[#c3f53b]/30"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-md border border-white/15 bg-white/5 hover:bg-white/10 text-foreground/80 hover:text-foreground text-xs font-mono transition-all duration-200"
             >
-              <span>EXPLORE</span>
-              <IconArrowUpRight className="size-3.5 text-[#c3f53b]" />
+              <IconBrandGithub className="size-3.5" />
+              <span>GITHUB</span>
             </Link>
-          </div>
+          )}
+          <Link
+            href={currentDisplay.href}
+            target="_blank"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#c3f53b]/30 bg-[#c3f53b]/10 hover:bg-[#c3f53b]/20 text-[#f7f7f5] hover:text-[#c3f53b] text-xs font-mono font-medium transition-all duration-200"
+          >
+            <span>EXPLORE</span>
+            <IconArrowUpRight className="size-3.5 text-[#c3f53b]" />
+          </Link>
         </div>
       </div>
     </section>
