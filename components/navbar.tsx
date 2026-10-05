@@ -222,33 +222,41 @@ export const Navbar = () => {
               priority
             />
           </div>
-          <h1 className="text-foreground text-xl font-medium tracking-tight md:text-2xl mt-1">
-            Devashish Sharma <span className="font-serif italic font-normal text-foreground px-0.5">aka</span> @devartish
+          <h1 className="text-foreground text-xs sm:text-sm font-pixel uppercase tracking-wide mt-1">
+            DEVASHISH SHARMA <span className="font-pixel lowercase text-foreground/60 px-0.5">aka</span>{" "}
+            <a
+              href="https://x.com/devartish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lowercase text-foreground/80 hover:text-primary hover:underline underline-offset-2 transition-colors cursor-pointer"
+            >
+              @devartish
+            </a>
           </h1>
           <a
             href="https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ?si=a1cff66c90ab4b51"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-2 text-xs text-foreground/75 hover:text-foreground transition-all mt-1 select-none"
+            className="group flex items-center justify-center gap-2 text-[10px] sm:text-[11px] font-pixel text-foreground/75 hover:text-foreground transition-all mt-1 select-none"
           >
             <svg className="size-3.5 shrink-0" viewBox="0 0 24 24" fill="#1DB954">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.216.353-.674.464-1.027.248-2.812-1.718-6.352-2.107-10.52-1.155-.403.092-.803-.16-.895-.563-.092-.403.16-.803.563-.895 4.564-1.042 8.48-.6 11.632 1.338.353.216.464.674.247 1.027zm1.467-3.26c-.272.443-.852.584-1.295.312-3.22-1.979-8.128-2.55-11.936-1.393-.497.151-1.024-.13-1.175-.627-.151-.497.13-1.024.627-1.175 4.356-1.322 9.774-.682 13.467 1.588.443.272.584.852.312 1.295zm.126-3.41c-3.86-2.292-10.23-2.504-13.918-1.384-.593.18-1.22-.164-1.4-.757-.18-.593.164-1.22.757-1.4 4.24-1.288 11.28-1.043 15.717 1.59.533.316.708 1.008.392 1.541-.316.533-1.008.708-1.548.41z" />
             </svg>
             <span className="truncate">
-              <span className="text-foreground/50">Listening:</span>
-              <span className="mx-1 text-foreground/40">—</span>
-              <span className="text-foreground/90 font-medium group-hover:text-primary transition-colors">
+              <span className="text-foreground/50 uppercase">LISTENING:</span>
+              <span className="mx-1.5 text-foreground/40">—</span>
+              <span className="text-foreground/90 font-medium group-hover:text-primary transition-colors uppercase">
                 The Less I Know The Better
               </span>
               <span className="mx-1 text-foreground/40">·</span>
-              <span className="text-foreground/60">Tame Impala</span>
+              <span className="text-foreground/60 uppercase">Tame Impala</span>
             </span>
           </a>
         </div>
       )}
 
       {/* Navigation links */}
-      <div className="flex items-center justify-center gap-4 pt-2.5 self-center">
+      <div className="flex items-center justify-center gap-4 sm:gap-5 pt-2.5 self-center">
         {links.map((link) => {
           const active = isActivePath(pathname, link.href);
           return (
@@ -256,7 +264,7 @@ export const Navbar = () => {
               key={link.href}
               href={link.href}
               className={cn(
-                "group relative transition-colors text-[15px]",
+                "group relative transition-colors font-pixel text-[13px] sm:text-[14px] uppercase tracking-wide",
                 active
                   ? "text-primary font-medium"
                   : "text-foreground/70 hover:text-primary",
